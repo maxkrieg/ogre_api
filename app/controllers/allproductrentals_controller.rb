@@ -24,8 +24,6 @@ class AllproductrentalsController < ApplicationController
   def set_product
     # PUBLIC
     @product = Product.find(params[:allproduct_id])
-    # PRIVATE
-    # @product = @current_user.products.find(params[:product_id])
   end
 
   def rental_params
