@@ -8,8 +8,12 @@ Rails.application.routes.draw do
 
   post '/register' => "auth#register"
 
-  resources :products, except: [:new, :edit] do
+  resources :userproducts, except: [:new, :edit] do
     resources :productrentals, except: [:new, :edit]
+  end
+
+  resources :products, except: [:new, :edit] do
+    resources :rentals, except: [:new, :edit]
   end
 
   resources :userrentals, except: [:new, :edit]
