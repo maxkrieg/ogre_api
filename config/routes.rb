@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   root 'auth#login'
 
   post '/register' => "auth#register"
+
+  resources :products, except: [:new, :edit] do
+    resources :productrentals, except: [:new, :edit]
+  end
+
+  resources :userrentals, except: [:new, :edit]
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
