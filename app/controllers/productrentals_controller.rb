@@ -1,4 +1,4 @@
-class ProductrentalsController < ProtectedController
+class ProductrentalsController < ApplicationController
 
   before_action :set_product
 
@@ -40,8 +40,8 @@ class ProductrentalsController < ProtectedController
   private
 
   def set_product
-    # @product = Product.find(params[:product])
-    @product = @current_user.products.find(params[:product_id])
+    @product = Product.find(params[:product])
+    # @product = @current_user.products.find(params[:product_id])
   end
 
   def rental_params

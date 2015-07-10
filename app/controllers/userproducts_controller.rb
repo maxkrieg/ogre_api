@@ -1,4 +1,4 @@
-class UserproductsController < ProtectedController
+class UserproductsController < ApplicationController
 
   def index
     # @products = Product.all.reverse
