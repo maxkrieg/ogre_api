@@ -4,8 +4,9 @@ class User < ActiveRecord::Base
   before_create :set_token
   after_find :fix_up_token
 
+  has_many :rentals, dependent: :destroy
   has_many :products, dependent: :destroy
-  has_many :products, through: :rentals, dependent: :destroy
+
 
   validates :email, uniqueness: true
 

@@ -17,13 +17,13 @@ ActiveRecord::Schema.define(version: 20150709214420) do
   enable_extension "plpgsql"
 
   create_table "products", force: :cascade do |t|
-    t.string   "title"
+    t.string   "title",                                      null: false
     t.text     "description"
-    t.decimal  "daily_cost"
-    t.string   "category"
+    t.decimal  "daily_cost",         precision: 8, scale: 2, null: false
+    t.string   "category",                                   null: false
     t.integer  "user_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 20150709214420) do
   add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
 
   create_table "rentals", force: :cascade do |t|
-    t.string   "start_date"
-    t.string   "end_date"
-    t.string   "status"
+    t.string   "start_date", null: false
+    t.string   "end_date",   null: false
+    t.string   "status",     null: false
     t.text     "message"
     t.integer  "product_id"
     t.integer  "user_id"
@@ -47,14 +47,14 @@ ActiveRecord::Schema.define(version: 20150709214420) do
   add_index "rentals", ["user_id"], name: "index_rentals_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "first_name",      null: false
+    t.string   "last_name",       null: false
     t.string   "email",           null: false
     t.string   "password_digest", null: false
     t.string   "token",           null: false
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
+    t.string   "city",            null: false
+    t.string   "state",           null: false
+    t.string   "zip",             null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
