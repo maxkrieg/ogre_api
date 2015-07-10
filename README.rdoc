@@ -1,9 +1,7 @@
-== README
+== Ogre Buddies
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ogre Buddies is a one-stop shop for having fun in the outdoors.  Find the gear you need and the people to use it with.
 
-Things you may want to cover:
 
 * Ruby version
 
@@ -21,8 +19,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
