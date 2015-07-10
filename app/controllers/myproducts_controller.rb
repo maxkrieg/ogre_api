@@ -2,8 +2,8 @@ class MyproductsController < ApplicationController
   ##### PRIVATE #####
 
   def index
-    # @products = Product.all.reverse
-    @products = @current_user.products.reverse
+    # @products = Product.all
+    @products = @current_user.products
     render json: @products
   end
 

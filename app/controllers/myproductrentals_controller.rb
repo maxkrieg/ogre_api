@@ -1,24 +1,15 @@
 class MyproductrentalsController < ApplicationController
-  ##### PROTECTED #####
+  ##### PRIVATE #####
   before_action :set_product
 
   def index
-    @rentals = @product.rentals #.sort { |a, b| [a[:date], a[:start_time]] <=> [b[:date], b[:start_time]] }
+    @rentals = @product.rentals
     render json: @rentals
   end
 
   def show
     @rental = @product.rentals.find(params[:id])
     render json: @rental
-  end
-
-  def create
-    @rental = @product.rentals.build(rental_params)
-    if @rental.save
-      render json: @rental, status: :created
-    else
-      render json: @rental.errors, status: :unprocessable_entity
-    end
   end
 
   def update
@@ -30,21 +21,11 @@ class MyproductrentalsController < ApplicationController
     end
   end
 
-  def destroy
-    @rental = @product.rentals.find(params[:id])
-    @rental.destroy
-    head :no_content
-  end
-
-
   private
 
   def set_product
-    # PUBLIC
-    # @product = Product.find(params[:product])
-
     # PRIVATE
-    @product = @current_user.products.find(params[:product_id])
+    @product = @current_user.products.find(params[:myproduct_id])
 
   end
 

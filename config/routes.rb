@@ -4,27 +4,27 @@ Rails.application.routes.draw do
 
   ########################################################
   # REGISTRATION AND LOGIN ###
+  root 'auth#login'
 
   post '/login' => "auth#login"
-  root 'auth#login'
   post '/register' => "auth#register"
 
   ########################################################
   # PRIVATE ROUTES FOR USER-OWNED RESOURCE ACCESS ###
 
   resources :myproducts, except: [:new, :edit] do
-    resources :myproductrentals, except: [:new, :edit]
+    resources :myproductrentals, only: [:index, :show, :update]
   end
 
-  resources :myrentals, except: [:new, :edit] do
-    resources :myrentalproduct, except: [:new, :edit]
+  resources :myrentals, except: [:new, :edit, :create] do
+    resources :myrentalproduct, only: [:show]
   end
 
   ########################################################
   # PUBLIC ROUTES FOR GLOBAL RESOURCE ACCESS ###
 
-  resources :allproducts, except: [:new, :edit] do
-    resources :allproductrentals, except: [:new, :edit]
+  resources :allproducts, only: [:index, :show] do
+    resources :allproductrentals, only: [:index, :show, :update]
   end
 
 

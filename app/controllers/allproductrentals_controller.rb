@@ -1,4 +1,4 @@
-class RentalsController < ApplicationController
+class AllproductrentalsController < ApplicationController
   ##### PUBLIC #####
 
   before_action :set_product
@@ -8,13 +8,9 @@ class RentalsController < ApplicationController
     render json: @rentals
   end
 
-  def show
-    @rental = @product.rentals.find(params[:id])
-    render json: @rental
-  end
-
   def create
     @rental = @product.rentals.build(rental_params)
+    @rental.user = @current_user
     if @rental.save
       render json: @rental, status: :created
     else
@@ -22,27 +18,12 @@ class RentalsController < ApplicationController
     end
   end
 
-  def update
-    @rental = @product.rentals.find(params[:id])
-    if @rental.update(rental_params)
-      head :no_content
-    else
-      render json: @rental.errors, status: :unprocessable_entity
-    end
-  end
-
-  def destroy
-    @rental = @product.rentals.find(params[:id])
-    @rental.destroy
-    head :no_content
-  end
-
 
   private
 
   def set_product
     # PUBLIC
-    @product = Product.find(params[:product])
+    @product = Product.find(params[:allproduct_id])
     # PRIVATE
     # @product = @current_user.products.find(params[:product_id])
   end
