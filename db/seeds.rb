@@ -21,8 +21,11 @@ puts "Created alex"
 max_product = max.products.create!(title: 'therma-rest pad', description: 'very lightweight and versatile sleeping pad, ideal for someone short', daily_cost: '9.99', category: 'camping')
 puts "added product to max"
 
-alex_product = alex.products.create!(title: 'climbing role', description: 'very strong rope, ideal for top roping', daily_cost: '20', category: 'climbing')
+alex_product = alex.products.create!(title: 'climbing rope', description: 'very strong rope, ideal for top roping', daily_cost: '20', category: 'climbing')
 puts "added product to alex"
 
-max_rental = max.rentals.create!(product: alex_product, start_date: '02/06/2015', end_date: '02/07/2015', status: 'pending', message: 'hey man I really love that rope!')
+max_rental = alex_product.rentals.create!(user: max, product_title: 'climbing rope', start_date: '02/06/2015', end_date: '02/07/2015', total_cost: '75.67', status: 'pending', message: 'hey man I really love that rope!')
 puts 'added rental to max'
+
+alex_rental = max_product.rentals.create!(user: alex, product_title: 'therma-rest pad', start_date: '02/06/2015', end_date: '02/07/2015', total_cost: '125', status: 'pending', message: 'hey man I really love that rope!')
+puts 'added rental to alex'

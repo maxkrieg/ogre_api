@@ -33,14 +33,16 @@ ActiveRecord::Schema.define(version: 20150709214420) do
   add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
 
   create_table "rentals", force: :cascade do |t|
-    t.string   "start_date", null: false
-    t.string   "end_date",   null: false
-    t.string   "status",     null: false
+    t.string   "product_title",                         null: false
+    t.string   "start_date",                            null: false
+    t.string   "end_date",                              null: false
+    t.decimal  "total_cost",    precision: 8, scale: 2, null: false
+    t.string   "status",                                null: false
     t.text     "message"
     t.integer  "product_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   add_index "rentals", ["product_id"], name: "index_rentals_on_product_id", using: :btree
