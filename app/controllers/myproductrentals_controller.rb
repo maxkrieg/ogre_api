@@ -1,5 +1,5 @@
-class ProductrentalsController < ApplicationController
-
+class MyproductrentalsController < ApplicationController
+  ##### PROTECTED #####
   before_action :set_product
 
   def index
@@ -40,8 +40,12 @@ class ProductrentalsController < ApplicationController
   private
 
   def set_product
-    @product = Product.find(params[:product])
-    # @product = @current_user.products.find(params[:product_id])
+    # PUBLIC
+    # @product = Product.find(params[:product])
+
+    # PRIVATE
+    @product = @current_user.products.find(params[:product_id])
+
   end
 
   def rental_params

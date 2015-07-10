@@ -2,21 +2,32 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  ########################################################
+  # REGISTRATION AND LOGIN ###
 
   post '/login' => "auth#login"
   root 'auth#login'
-
   post '/register' => "auth#register"
 
-  resources :userproducts, except: [:new, :edit] do
-    resources :productrentals, except: [:new, :edit]
+  ########################################################
+  # PRIVATE ROUTES FOR USER-OWNED RESOURCE ACCESS ###
+
+  resources :myproducts, except: [:new, :edit] do
+    resources :myproductrentals, except: [:new, :edit]
   end
 
-  resources :products, except: [:new, :edit] do
-    resources :rentals, except: [:new, :edit]
+  resources :myrentals, except: [:new, :edit] do
+    resources :myrentalproduct, except: [:new, :edit]
   end
 
-  resources :userrentals, except: [:new, :edit]
+  ########################################################
+  # PUBLIC ROUTES FOR GLOBAL RESOURCE ACCESS ###
+
+  resources :allproducts, except: [:new, :edit] do
+    resources :allproductrentals, except: [:new, :edit]
+  end
+
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
