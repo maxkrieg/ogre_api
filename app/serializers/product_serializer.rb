@@ -3,7 +3,7 @@ class ProductSerializer < ActiveModel::Serializer
   has_many :rentals
 
   def image_src
-    'https://s3.amazonaws.com/ogre-images/medium/#{object.id}/#{object.image_file_name}'
+    "https://s3-us-west-2.amazonaws.com/ogre-images/medium/#{object.id}/#{object.image_file_name}"
   end
 
 end
