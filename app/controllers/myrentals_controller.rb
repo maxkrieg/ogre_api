@@ -1,4 +1,4 @@
-class MyrentalsController < ApplicationController
+class MyrentalsController < ProtectedController
   ##### PRIVATE #####
 
   def index

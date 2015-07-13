@@ -1,4 +1,4 @@
-class AllproductsController < ApplicationController
+class AllproductsController < ProtectedController
   ##### PUBLIC #####
 
   def index

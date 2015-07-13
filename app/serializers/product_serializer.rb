@@ -1,13 +1,9 @@
 class ProductSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :daily_cost, :category, :image_tag
+  attributes :id, :title, :description, :daily_cost, :category, :image_src
   has_many :rentals
 
-  def image_tag
-    if object.image_file_name
-      "<img class='media-object' src='https://s3.amazonaws.com/mytinerary_images/medium/#{object.id}/#{object.image_file_name}'/>"
-    else
-      "<span></span>"
-    end
+  def image_src
+    'https://s3.amazonaws.com/ogre-images/medium/#{object.id}/#{object.image_file_name}'
   end
 
 end

@@ -1,4 +1,4 @@
-class MyrentalproductController < ApplicationController
+class MyrentalproductController < ProtectedController
   ##### PRIVATE #####
   before_action :set_rental
 

@@ -1,4 +1,4 @@
-class AllproductrentalsController < ApplicationController
+class AllproductrentalsController < ProtectedController
   ##### PUBLIC #####
 
   before_action :set_product

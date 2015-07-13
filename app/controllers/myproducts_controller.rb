@@ -1,4 +1,4 @@
-class MyproductsController < ApplicationController
+class MyproductsController < ProtectedController
   ##### PRIVATE #####
 
   def index
