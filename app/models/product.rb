@@ -2,6 +2,9 @@ class Product < ActiveRecord::Base
   belongs_to :user
   has_many :rentals, dependent: :destroy
 
+  # Making the product title searchable by fuzzily
+  fuzzily_searchable :title
+
   has_attached_file :image,
     :styles => { :large => "200x200#", :medium => "150x150#" },
     :processors => [:thumbnail],

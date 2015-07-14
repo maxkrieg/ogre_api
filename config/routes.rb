@@ -27,6 +27,8 @@ Rails.application.routes.draw do
     resources :allproductrentals, only: [:index, :show, :update]
   end
 
+  get '/searchproducts' => "allproducts#search_products"
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
