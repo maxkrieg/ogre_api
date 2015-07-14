@@ -17,7 +17,7 @@ class MyproductsController < ProtectedController
     # @product = Product.new(product_params)
     @product = @current_user.products.new(product_params)
     if @product.save
-      render json: @product, status: :created, location: products_url
+      render json: @product, status: :created
     else
       render json: @product.errors, status: :unprocessable_entity
     end
@@ -44,7 +44,7 @@ class MyproductsController < ProtectedController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :daily_cost, :category, :image)
+    params.require(:product).permit(:title, :description, :daily_cost, :category) #:image)
   end
 
 end
