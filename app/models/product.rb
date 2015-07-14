@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
   belongs_to :user
-  has_many :rentals
+  has_many :rentals, dependent: :destroy
 
   has_attached_file :image,
     :styles => { :large => "200x200#", :medium => "150x150#" },
