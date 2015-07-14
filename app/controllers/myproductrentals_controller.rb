@@ -30,7 +30,7 @@ class MyproductrentalsController < ProtectedController
   end
 
   def rental_params
-    params.permit(:title,:location,:date,:start_time,:end_time,:attendees,:desc,:image)
+    params.permit(:status)
   end
 
 end
