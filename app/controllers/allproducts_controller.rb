@@ -14,6 +14,7 @@ class AllproductsController < ProtectedController
   # value will be accesible as a params key value 'params[:title]'
   def search_products
     @products = Product.find_by_fuzzy_title(params[:title])
+    render json: @products
   end
 
 end
