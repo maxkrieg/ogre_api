@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   post '/login' => "auth#login"
   post '/register' => "auth#register"
+  get '/getuser' => "user#show"
 
   ########################################################
   # PRIVATE ROUTES FOR USER-OWNED RESOURCE ACCESS ###
