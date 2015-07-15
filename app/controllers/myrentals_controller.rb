@@ -34,7 +34,7 @@ class MyrentalsController < ProtectedController
   private
 
   def rental_params
-    params.require(:rental).permit(:start_date, :end_date, :status, :message)
+    params.require(:rental).permit(:start_date, :end_date, :status, :message, :total_cost)
   end
 
 end
