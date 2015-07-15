@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   # PUBLIC ROUTES FOR GLOBAL RESOURCE ACCESS ###
 
   resources :allproducts, only: [:index, :show] do
-    resources :allproductrentals, only: [:index, :show, :update]
+    resources :allproductrentals, only: [:index, :show, :update, :create]
   end
 
   get '/searchproducts' => "allproducts#search_products"

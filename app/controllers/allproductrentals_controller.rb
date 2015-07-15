@@ -27,7 +27,7 @@ class AllproductrentalsController < ProtectedController
   end
 
   def rental_params
-    params.permit(:title,:location,:date,:start_time,:end_time,:attendees,:desc,:image)
+    params.require(:rental).permit(:start_date, :end_date, :total_cost, :status, :message)
   end
 
 end

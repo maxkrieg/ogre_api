@@ -3,7 +3,7 @@ class CreateRentals < ActiveRecord::Migration
     create_table :rentals do |t|
       t.string :start_date, null: false
       t.string :end_date, null: false
-      t.decimal :total_cost, null: false, :precision => 8, :scale => 2
+      t.string :total_cost, null: false
       t.string :status, null: false
       t.text :message
       t.references :product, index: true, foreign_key: true

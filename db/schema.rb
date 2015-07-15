@@ -17,13 +17,13 @@ ActiveRecord::Schema.define(version: 20150714163521) do
   enable_extension "plpgsql"
 
   create_table "products", force: :cascade do |t|
-    t.string   "title",                                      null: false
+    t.string   "title",              null: false
     t.text     "description"
-    t.decimal  "daily_cost",         precision: 8, scale: 2, null: false
-    t.string   "category",                                   null: false
+    t.string   "daily_cost",         null: false
+    t.string   "category",           null: false
     t.integer  "user_id"
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -33,15 +33,15 @@ ActiveRecord::Schema.define(version: 20150714163521) do
   add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
 
   create_table "rentals", force: :cascade do |t|
-    t.string   "start_date",                         null: false
-    t.string   "end_date",                           null: false
-    t.decimal  "total_cost", precision: 8, scale: 2, null: false
-    t.string   "status",                             null: false
+    t.string   "start_date", null: false
+    t.string   "end_date",   null: false
+    t.string   "total_cost", null: false
+    t.string   "status",     null: false
     t.text     "message"
     t.integer  "product_id"
     t.integer  "user_id"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "rentals", ["product_id"], name: "index_rentals_on_product_id", using: :btree
