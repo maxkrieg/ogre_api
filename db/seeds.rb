@@ -38,17 +38,17 @@ alex_productThree = alex.products.create!(title: 'Kayaks', description: 'Two sea
 puts "added products to alex"
 
 ## Max Rentals
-max_rental = alex_product.rentals.create!(user: max, product_title: 'climbing rope', start_date: '02/06/2015', end_date: '02/07/2015', total_cost: '75.67', status: 'pending', message: 'hey man I really love that rope!')
+max_rental = alex_product.rentals.create!(user: max, start_date: '02/06/2015', end_date: '02/07/2015', total_cost: '75.67', status: 'pending', message: 'hey man I really love that rope!')
 
-max_rental = alex_productTwo.rentals.create!(user: max, product_title: 'Showshoes', start_date: '02/06/2015', end_date: '02/07/2015', total_cost: '75.67', status: 'pending', message: 'hey man I really love that rope!')
+max_rental = alex_productTwo.rentals.create!(user: max, start_date: '02/06/2015', end_date: '02/07/2015', total_cost: '75.67', status: 'pending', message: 'hey man I really love that rope!')
 
-max_rental = alex_productThree.rentals.create!(user: max, product_title: 'Kayaks', start_date: '02/06/2015', end_date: '02/07/2015', total_cost: '75.67', status: 'pending', message: 'hey man I really love that rope!')
+max_rental = alex_productThree.rentals.create!(user: max, start_date: '02/06/2015', end_date: '02/07/2015', total_cost: '75.67', status: 'pending', message: 'hey man I really love that rope!')
 puts 'added rentals to max'
 
 ## Alex Rentals
-alex_rental = max_product.rentals.create!(user: alex, product_title: 'therma-rest pad', start_date: '02/06/2015', end_date: '02/07/2015', total_cost: '125', status: 'pending', message: 'hey man I really love that rope!')
+alex_rental = max_product.rentals.create!(user: alex, start_date: '02/06/2015', end_date: '02/07/2015', total_cost: '125', status: 'pending', message: 'hey man I really love that rope!')
 
-alex_rental = max_productTwo.rentals.create!(user: alex, product_title: 'REI Tent', start_date: '02/06/2015', end_date: '02/07/2015', total_cost: '125', status: 'pending', message: 'hey man I really love that rope!')
+alex_rental = max_productTwo.rentals.create!(user: alex, start_date: '02/06/2015', end_date: '02/07/2015', total_cost: '125', status: 'pending', message: 'hey man I really love that rope!')
 
-alex_rental = max_productThree.rentals.create!(user: alex, product_title: 'Hiking Poles', start_date: '02/06/2015', end_date: '02/07/2015', total_cost: '125', status: 'pending', message: 'hey man I really love that rope!')
+alex_rental = max_productThree.rentals.create!(user: alex, start_date: '02/06/2015', end_date: '02/07/2015', total_cost: '125', status: 'pending', message: 'hey man I really love that rope!')
 puts 'added rentals to alex'
