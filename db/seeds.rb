@@ -18,7 +18,7 @@ puts "Cleared database"
 max = User.create!(first_name: 'Max', last_name: 'Krieg', email: 'max@gmail.com', password: 'max123', city: 'Quincy', state: 'MA', zip: '02170')
 puts "Created max"
 
-alex = User.create!(first_name: 'Alex', last_name: 'Zito-Wold', email: 'alex@gmail.com', password: 'alex123', city: 'Cambridge', state: 'MA', zip: '02139')
+alex = User.create!(first_name: 'Alex', last_name: 'Zito-Wolf', email: 'alex@gmail.com', password: 'alex123', city: 'Cambridge', state: 'MA', zip: '02139')
 puts "Created alex"
 
 ## Max Products
