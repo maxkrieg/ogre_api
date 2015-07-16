@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   end
 
   get '/searchproducts' => "allproducts#search_products"
-
+  get '/searchmeetup' => "searchmeetup#search"
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

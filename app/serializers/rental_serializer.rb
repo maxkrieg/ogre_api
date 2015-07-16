@@ -1,5 +1,5 @@
 class RentalSerializer < ActiveModel::Serializer
-  attributes :id, :product_name, :start_date, :end_date, :total_cost, :status, :message, :created_at, :renter_name, :renter_first_name, :owner_name, :owner_email
+  attributes :id, :product_name, :start_date, :end_date, :total_cost, :status, :message, :created_at, :renter_name, :renter_first_name, :owner_name, :owner_email, :product_id
 
   # has_one :user, serializer: UserSerializer
 
@@ -13,6 +13,10 @@ class RentalSerializer < ActiveModel::Serializer
 
   def product_name
     object.product.title
+  end
+
+  def product_id
+    object.product.id
   end
 
   def owner_name
