@@ -44,7 +44,8 @@ class MyproductsController < ProtectedController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :daily_cost, :category) #:image)
+    params.require(:product).permit(:title, :description, :daily_cost, :category, :image)
   end
+
 
 end
