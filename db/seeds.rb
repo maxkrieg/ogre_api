@@ -22,19 +22,19 @@ alex = User.create!(first_name: 'Alex', last_name: 'Zito-Wold', email: 'alex@gma
 puts "Created alex"
 
 ## Max Products
-max_product = max.products.create!(title: 'therma-rest pad', description: 'very lightweight and versatile sleeping pad, ideal for someone short', daily_cost: '9.99', category: 'camping', image: @file_one)
+max_product = max.products.create!(title: 'therma-rest pad', description: 'very lightweight and versatile sleeping pad, ideal for someone short', daily_cost: '9.99', category: 'Camping', image: @file_one)
 
-max_productTwo = max.products.create!(title: 'REI tent', description: 'great, sturdy tent.  Made for three seasons', daily_cost: '30', category: 'camping', image: @file_two)
+max_productTwo = max.products.create!(title: 'REI tent', description: 'great, sturdy tent.  Made for three seasons', daily_cost: '30', category: 'Camping', image: @file_two)
 
-max_productThree = max.products.create!(title: 'Hiking Poles', description: 'made for tall people, generally awesome and lightweight', daily_cost: '10', category: 'hiking', image: @file_three)
+max_productThree = max.products.create!(title: 'Hiking Poles', description: 'made for tall people, generally awesome and lightweight', daily_cost: '10', category: 'Hiking', image: @file_three)
 puts "added products to max"
 
 ## Alex Products
-alex_product = alex.products.create!(title: 'climbing rope', description: 'very strong rope, ideal for top roping', daily_cost: '20', category: 'climbing', image: @file_one)
+alex_product = alex.products.create!(title: 'climbing rope', description: 'very strong rope, ideal for top roping', daily_cost: '20', category: 'Climbing', image: @file_one)
 
-alex_productTwo = alex.products.create!(title: 'Snowshoes', description: 'Size 10 snowshoes by REI, really strong and secure.', daily_cost: '15.60', category: 'snowshoeing', image: @file_two)
+alex_productTwo = alex.products.create!(title: 'Snowshoes', description: 'Size 10 snowshoes by REI, really strong and secure.', daily_cost: '15.60', category: 'Snowshoeing', image: @file_two)
 
-alex_productThree = alex.products.create!(title: 'Kayaks', description: 'Two sea kayaks for rent, with spray skirts.  One is a double.', daily_cost: '19.75', category: 'sea kayaking', image: @file_three)
+alex_productThree = alex.products.create!(title: 'Kayaks', description: 'Two sea kayaks for rent, with spray skirts.  One is a double.', daily_cost: '19.75', category: 'Kayaking', image: @file_three)
 puts "added products to alex"
 
 ## Max Rentals
