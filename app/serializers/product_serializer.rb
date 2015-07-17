@@ -1,5 +1,5 @@
 class ProductSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :daily_cost, :category, :image_src, :owner_name
+  attributes :id, :title, :description, :daily_cost, :category, :image_src, :owner_name, :owner_city, :owner_state
   has_many :rentals
 
   def image_src
@@ -8,6 +8,14 @@ class ProductSerializer < ActiveModel::Serializer
 
   def owner_name
     object.user.first_name
+  end
+
+  def owner_city
+    object.user.city
+  end
+
+  def owner_state
+    object.user.state
   end
 
 end
