@@ -10,7 +10,6 @@ class MyrentalproductController < ProtectedController
   private
 
   def set_rental
-    # PRIVATE
     @rental = @current_user.rentals.find(params[:myrental_id])
   end
 

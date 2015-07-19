@@ -26,7 +26,6 @@ class MyproductrentalsController < ProtectedController
   def set_product
     # PRIVATE
     @product = @current_user.products.find(params[:myproduct_id])
-
   end
 
   def rental_params

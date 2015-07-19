@@ -4,7 +4,7 @@ class AllproductrentalsController < ProtectedController
   before_action :set_product
 
   def index
-    @rentals = @product.rentals #.sort { |a, b| [a[:date], a[:start_time]] <=> [b[:date], b[:start_time]] }
+    @rentals = @product.rentals
     render json: @rentals
   end
 
@@ -17,7 +17,6 @@ class AllproductrentalsController < ProtectedController
       render json: @rental.errors, status: :unprocessable_entity
     end
   end
-
 
   private
 
