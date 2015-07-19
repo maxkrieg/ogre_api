@@ -9,7 +9,7 @@
 @rei_tent = Rack::Test::UploadedFile.new(Rails.root + 'starter_images/rei-tent.jpg', 'image/jpg')
 @hiking_poles = Rack::Test::UploadedFile.new(Rails.root + 'starter_images/hiking-poles.jpg', 'image/jpg')
 @climbing_rope = Rack::Test::UploadedFile.new(Rails.root + 'starter_images/climbing-rope.jpg', 'image/jpg')
-@showshoes = Rack::Test::UploadedFile.new(Rails.root + 'starter_images/showshoes.jpg', 'image/jpg')
+@snowshoes = Rack::Test::UploadedFile.new(Rails.root + 'starter_images/snowshoes.jpg', 'image/jpg')
 @kayak = Rack::Test::UploadedFile.new(Rails.root + 'starter_images/kayak.jpg', 'image/jpg')
 
 User.destroy_all
